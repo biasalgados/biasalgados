@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salgadinhos da Bia - Sabor Irresistível em Cada Mordida</title>
+    <style>
+        :root {
+            --primary-color: #a90f0f;
+            --secondary-color: #ffc107;
+            --light-color: #fff8e6;
+            --dark-color: #2c0101;
+            --text-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #7a0808 100%);
+            color: white;
+            text-align: center;
+            padding: 0;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-overlay {
+            padding: 4rem 1rem 6rem;
+            background: url('/api/placeholder/1200/600') center/cover;
+            background-blend-mode: overlay;
+            position: relative;
+        }
+
+        .header-overlay::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(169, 15, 15, 0.85);
+            z-index: 1;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .logo {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: white;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            position: relative;
+            display: inline-block;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 10%;
+            width: 80%;
+            height: 4px;
+            background-color: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .tagline {
+            font-size: 1.8rem;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-highlight {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        .cta-container {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-primary {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        .cta-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button:hover::before {
+            width: 100%;
+        }
+
+        .wave-divider {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .wave-divider svg {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 50px;
+            transform: rotateY(180deg);
+        }
+
+        .wave-divider .shape-fill {
+            fill: var(--light-color);
+        }
+
+        .featured-product {
+            background-color: white;
+            margin-top: -70px;
+            margin-bottom: 4rem;
+            border-radius: 20px;
+            overflow: hidden;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        .featured-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .featured-image {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+            padding-top: 56.25%;
+            /* 16:9 Aspect Ratio */
+            overflow: hidden;
+        }
+
+        .featured-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .featured-text {
+            flex: 1;
+            min-width: 300px;
+            padding: 3rem;
+            background: linear-gradient(135deg, #fff 0%, #fff8e6 100%);
+        }
+
+        .featured-badge {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            box-shadow: 0 3px 10px rgba(169, 15, 15, 0.3);
+        }
+
+        .featured-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .featured-price {
+            font-size: 2rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .price-currency {
+            font-size: 1.2rem;
+            margin-right: 0.3rem;
+        }
+
+        .price-unit {
+            font-size: 1rem;
+            color: #777;
+            margin-left: 0.5rem;
+            font-weight: normal;
+        }
+
+        .section {
+            padding: 5rem 1rem;
+            position: relative;
+        }
+
+        .section-dark {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #7a0808 100%);
+            color: white;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        .section-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-15px);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(169, 15, 15, 0.3);
+        }
+
+        .feature-icon i {
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .feature-title {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .products-title-container {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .products-subtitle {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .products-title {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 1rem;
+        }
+
+        .products-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+            width: 60%;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: bold;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-content {
+            padding: 1.5rem;
+        }
+
+        .product-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .product-description {
+            margin-bottom: 1.5rem;
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .product-button {
+            display: block;
+            width: 100%;
+            padding: 0.8rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(169, 15, 15, 0.2);
+        }
+
+        .product-button:hover {
+            background-color: #870c0c;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(169, 15, 15, 0.3);
+        }
+
+        .show-more {
+            text-align: center;
+        }
+
+        .testimonials-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '\201C';
+            font-size: 5rem;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            color: rgba(255, 255, 255, 0.2);
+            font-family: serif;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1rem;
+            background-color: #f1f1f1;
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            margin: 0;
+            color: var(--secondary-color);
+        }
+
+        .author-info p {
+            margin: 0;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .delivery-methods {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .delivery-title {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 1rem;
+        }
+
+        .delivery-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+            width: 60%;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        .delivery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .delivery-item {
+            padding: 2rem;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .delivery-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .delivery-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 5px 15px rgba(169, 15, 15, 0.3);
+        }
+
+        .delivery-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .delivery-name {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .delivery-info {
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+
+        .delivery-link {
+            display: inline-block;
+            padding: 0.7rem 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(169, 15, 15, 0.2);
+        }
+
+        .delivery-link:hover {
+            background-color: #870c0c;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(169, 15, 15, 0.3);
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-info {
+            margin-bottom: 2rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-info i {
+            margin-right: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(169, 15, 15, 0.3);
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px) rotate(10deg);
+            background-color: #870c0c;
+            box-shadow: 0 8px 20px rgba(169, 15, 15, 0.4);
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .footer-text {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+        }
+
+        .whatsapp-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background-color: #25d366;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .whatsapp-button i {
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .whatsapp-text {
+            position: absolute;
+            right: 80px;
+            background-color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-weight: bold;
+            color: var(--text-color);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .whatsapp-button:hover .whatsapp-text {
+            opacity: 1;
+            visibility: visible;
+            right: 85px;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+
+            .tagline {
+                font-size: 1.4rem;
+            }
+
+            .featured-text {
+                padding: 2rem;
+            }
+
+            .featured-title {
+                font-size: 2rem;
+            }
+
+            .section-title,
+            .products-title,
+            .delivery-title {
+                font-size: 2rem;
+            }
+
+            .testimonial-text {
+                font-size: 1rem;
+            }
+
+            .whatsapp-text {
+                display: none;
+            }
+        }
+    </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-weight-400;500;600;700;800&display=swap">
+</head>
+
+<body>
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/556596704263" class="whatsapp-button">
+            <i class="fab fa-whatsapp"></i>
+            <span class="whatsapp-text">Peça pelo WhatsApp</span>
+        </a>
+    </div>
+
+    <!-- Header Section -->
+    <header>
+        <div class="header-overlay">
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="https://ruknnupvbhhizhbpaknr.supabase.co/storage/v1/object/public/toprent//Salgadinhos.png" alt="Salgadinhos" class="logo" width="250px">
+                </div>
+                <div class="tagline">Sabor <span class="header-highlight">irresistível</span> em cada mordida!</div>
+                <div class="cta-container">
+                    <a href="#menu" class="cta-button cta-primary">Ver Cardápio</a>
+                    <a href="#pedir" class="cta-button cta-secondary">Pedir
+                        Agora</a>
+                </div>
+            </div>
+        </div>
+        <div class="wave-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section class="section">
+        <div class="section-container">
+            <div class="section-center">
+                <h2 class="section-title">Por que nos escolher?</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="feature-title">Sabor Único</h3>
+                    <p>Nossos salgados são preparados com receitas exclusivas e ingredientes de alta qualidade que
+                        garantem um sabor único e inesquecível.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="feature-title">Sempre Frescos</h3>
+                    <p>Produzimos diariamente para garantir que você receba os salgados sempre fresquinhos e com o
+                        máximo sabor.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3 class="feature-title">Entrega Rápida</h3>
+                    <p>Entregamos em toda a cidade com agilidade para que você receba seus salgados ainda quentinhos e
+                        no horário combinado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="section">
+        <div class="section-container">
+            <div class="products-title-container">
+                <p class="products-subtitle">NOSSO CARDÁPIO</p>
+                <h2 class="products-title">Salgados irresistíveis</h2>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.ytimg.com/vi/HvDKaQHQ5pY/maxresdefault.jpg" alt="Bolinha de Queijo">
+                        <div class="product-badge">FAVORITO</div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Bolinha de Queijo</h3>
+                        <p class="product-description">Crocantes por fora e super cremosas por dentro. Uma explosão de
+                            sabor em cada mordida!</p>
+                        <a href="#pedir"
+                            class="product-button">
+                            <i class="fas fa-shopping-cart"></i> Pedir
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.ytimg.com/vi/ZyEtx3O15oc/maxresdefault.jpg" alt="Coxinha de Frango">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Bombinha de carne</h3>
+                        <p class="product-description">Deliciosa bombinha de carne recheada com ingredientes frescos e saborosos.</p>
+                        <a href="#pedir"
+                            class="product-button">
+                            <i class="fas fa-shopping-cart"></i> Pedir
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://benditosalgado.com.br/wp-content/uploads/2020/04/Travesserinho2.jpg" alt="Risole de Carne">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Travesseirinho de presunto e queijo</h3>
+                        <p class="product-description">Deliciosos traveseirinhos recheados com presunto e queijo derretido.</p>
+                        <a href="#pedir"
+                            class="product-button">
+                            <i class="fas fa-shopping-cart"></i> Pedir
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://lh5.googleusercontent.com/proxy/Rh5AyJtgaETeA-Fpf2r4Kj5Okv0dHedENpPz9sXcPnpqLZvvIY2MQcdsSqcDTDuElABgLBG_rch1jrYinrjxkVqEW3UGrSzOrpeNII9d8ocr45-V9A" alt="Kibe">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Kibe</h3>
+                        <p class="product-description">Tradicional kibe crocante com recheio especial de carne temperada.</p>
+                        <a href="#pedir"
+                            class="product-button">
+                            <i class="fas fa-shopping-cart"></i> Pedir
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://receiterapia.com.br/wp-content/uploads/2024/12/O-Segredo-do-Enroladinho-de-Salsicha-com-Queijo-que-Vai-Te-Surpreender.jpg" alt="Empadinha de Frango">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Enroladinho de salsicha</h3>
+                        <p class="product-description">Deliciosos enroladinhos de salsicha crocantes por fora e macios por dentro.</p>.</p>
+                        <a href="#pedir"
+                            class="product-button">
+                            <i class="fas fa-shopping-cart"></i> Pedir
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://www.sabornamesa.com.br/media/k2/items/cache/a0e2fbcdd218693394d187e767c5271e_XL.jpg" alt="Pacote 100 Salgados">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Croquete de carne</h3>
+                        <p class="product-description">Deliciosos croquetes de carne, crocantes por fora e macios por dentro.</p>
+                        <a href="#pedir"
+                            class="product-button">
+                            <i class="fas fa-shopping-cart"></i> Pedir
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section section-dark">
+        <div class="section-container">
+            <div class="section-center">
+                <h2 class="section-title">O que nossos clientes dizem</h2>
+            </div>
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Os melhores salgadinhos que já provei! As bolinhas de queijo são
+                        simplesmente divinas, super cremosas. Sempre peço para as festas da minha família e todos
+                        adoram!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg" alt="Cliente">
+                        </div>
+                        <div class="author-info">
+                            <h4>Maria Silva</h4>
+                            <p>Cliente fiel há 2 anos</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">A entrega é super rápida e os salgados chegam sempre quentinhos.
+                        Experimentei todos os sabores e são deliciosos. A Bia capricha no tempero!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg" alt="Cliente">
+                        </div>
+                        <div class="author-info">
+                            <h4>João Pereira</h4>
+                            <p>Cliente desde 2023</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Fiz um pedido para um evento corporativo e todos elogiaram muito. O
+                        atendimento foi excelente e os salgados fizeram sucesso! Recomendo a todos!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg" alt="Cliente">
+                        </div>
+                        <div class="author-info">
+                            <h4>Ana Souza</h4>
+                            <p>Empresária</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery Methods Section -->
+    <section id="pedir" class="section">
+        <div class="section-container">
+            <div class="delivery-methods">
+                <h2 class="delivery-title">Como Pedir</h2>
+                <div class="delivery-grid">
+                    <div class="delivery-item">
+                        <div class="delivery-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3 class="delivery-name">WhatsApp</h3>
+                        <p class="delivery-info">Peça diretamente pelo nosso WhatsApp e receba atualizações sobre seu
+                            pedido em tempo real.</p>
+                        <a href="https://wa.me/556596704263" class="delivery-link">Pedir pelo
+                            WhatsApp</a>
+                    </div>
+                    <div class="delivery-item">
+                        <div class="delivery-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="delivery-name">iFood</h3>
+                        <p class="delivery-info">Encontre-nos no iFood e aproveite as promoções exclusivas da
+                            plataforma.</p>
+                        <a href="https://www.ifood.com.br/delivery/pontes-e-lacerda-mt/salgadinhos-da-bia-jardim-tropical/a000b94a-515b-4175-b160-746ad78a7e5c" class="delivery-link">Pedir pelo iFood</a>
+                    </div>
+                    <div class="delivery-item">
+                        <div class="delivery-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="delivery-name">Much</h3>
+                        <p class="delivery-info">Peça também pelo aplicativo Much e acompanhe seu pedido facilmente.</p>
+                        <a href="https://www.deliverymuch.com.br/lista-lojas/pontes-e-lacerda-mt/salgadinhos-da-bia-29m0y" class="delivery-link">Pedir pelo Much</a>
+                    </div>
+                    <div class="delivery-item">
+                        <div class="delivery-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="delivery-name">Ai que Fome</h3>
+                        <p class="delivery-info">Peça também pelo aplicativo Ai que Fome e acompanhe seu pedido facilmente.</p>
+                        <a href="https://aiqfome.com/MT/pontes-e-lacerda/salgadinhos-da-bia" class="delivery-link">Pedir pelo AiqFome</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="section">
+        <div class="section-container">
+            <div class="section-center">
+                <h2 class="section-title">Entre em Contato</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p>Tem alguma dúvida ou sugestão? Entre em contato conosco!</p>
+                    <p><i class="fas fa-phone"></i> (65) 9 9670-4263</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Atendemos em toda a cidade de Pontes e Lacerda - MT</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p class="footer-text">&copy; 2025 Salgadinhos da Bia - Todos os direitos reservados</p>
+    </footer>
+</body>
+
+</html>
